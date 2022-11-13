@@ -11,4 +11,9 @@ The quick version?
 
 We use the [expose-tunnel](https://github.com/marketplace/actions/expose-tunnel) action to easily set up a tunnel into the CI job. It creates a tunnel using [bore.pub](https://github.com/ekzhang/bore), which supports setting up your own self-hosted server.
 
+
 This PR is an example of running the environment.
+
+Check out the examples here:
+- Example Pull Request that starts a Preview Environment https://github.com/famly/template-preview-environment/pull/1
+- Example CI job output [here](https://github.com/famly/template-preview-environment/actions/runs/3456364929/jobs/5769048829)
