@@ -14,3 +14,43 @@ We use the [expose-tunnel](https://github.com/marketplace/actions/expose-tunnel)
 Check out the examples here:
 - Example Pull Request that starts a Preview Environment https://github.com/famly/template-preview-environment/pull/1
 - Example CI job output [here](https://github.com/famly/template-preview-environment/actions/runs/3456364929/jobs/5769048829)
+
+## Workflow Overview
+
+The following diagram is an overview of the flow the CI job:
+
+```
+            Comment posted on Pull Request
+                          ↓
+            +----------------------------+
+            |   Detect Trigger Comment   |
+            |   React with 👀 if it is   |
+            +----------------------------+
+                          ↓
+            +----------------------------+
+            |      Checkout PR Code      |
+            +----------------------------+
+                          ↓
+            +----------------------------+
+            | Setup Project Dependencies |
+            +----------------------------+
+                          ↓
+            +----------------------------+
+            |  Start Development Server  |
+            |       in background        |
+            +----------------------------+
+                          ↓
+            +----------------------------+
+            |  Setup Tunnel into CI Job  |
+            +----------------------------+
+                          ↓
+            +----------------------------+
+            | Post Tunnel URL as Comment |
+            |    on the Pull Request     |
+            +----------------------------+
+                          ↓
+            +----------------------------+
+            | Keep CI/Server alive for   |
+            |        30 minutes          |
+            +----------------------------+
+```
